@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0d9488;
+    border-radius: 99px;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cairn-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-gradient-to-r from-cairn-500 to-emerald-500
+           text-white font-semibold rounded-xl
+           hover:from-cairn-400 hover:to-emerald-400
+           transition-all duration-300
+           shadow-lg shadow-cairn-500/20
+           hover:shadow-cairn-500/40 hover:scale-[1.02]
+           active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           border border-cairn-500/40 text-cairn-400 font-semibold rounded-xl
+           hover:bg-cairn-500/10 hover:border-cairn-500/60
+           transition-all duration-300;
+  }
+
+  .section-header {
+    @apply text-center mb-16;
+  }
+
+  .section-eyebrow {
+    @apply text-cairn-400 text-sm font-semibold uppercase tracking-widest mb-3 block;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .glow-teal {
+    box-shadow: 0 0 40px rgba(20, 184, 166, 0.15);
+  }
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(20, 184, 166, 0.4);
+  }
+}
